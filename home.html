@@ -33,9 +33,9 @@ z-index:10000000;
       padding: 10px;
       cursor: pointer;
       background:transparent;
+      border:none;
       color:white;
-      background:black;
-      font-size:17px;
+      font-size:16px;
     }
     
     #hiddenDiv {
@@ -61,7 +61,7 @@ background:black;
 color:white;
 text-decoration:none;
 }
-    #closeButton {
+    #closButton {
       position: absolute;
       top: 5px;
       right: 15px;
@@ -1182,7 +1182,7 @@ text-decoration:none;
   <button id="closeButton">Close</button>
 </div><div id="textDiv">
 <div id="hiddenDiv">
-  <span id="closeButton" onclick="closeDiv()">X</span>
+  <span id="closButton" onclick="closeDiv()">X</span>
   <p><br>Welcome to Yeti360, your go-to destination for insightful articles, engaging stories, and the latest trends. Explore a world of knowledge and inspiration as we embark on a journey through the realms of technology, innovation, and beyond. Join us in discovering the stories that matter and stay connected with the Yeti360 community.<br><br>
 If you are new to this website please share your feedback and subscribe for latest blogs related Himachal Pradesh.<br><br>
 <a href="#Subscribe">Subscribe</a>
@@ -1469,8 +1469,9 @@ hiddenElementss.forEach((el) => observerr.observe(el));
      
       setTimeout(() => {
         const textDiv = document.getElementById('textDiv');
+         const hiddenDiv = document.getElementById('hiddenDiv');    
         textDiv.style.opacity = '1';
-
+        hiddenDiv.style.opacity = '1';
        
         localStorage.setItem('divDisplayed', 'true');
       }, 3000);
@@ -1480,8 +1481,9 @@ hiddenElementss.forEach((el) => observerr.observe(el));
   function closeDiv() {
     const textDiv = document.getElementById('textDiv');
     textDiv.style.opacity = '0';
-    textDiv.style.transform = 'translateY(100px)';
-
+    textDiv.style.transform = 'translateY(400px)';
+     hiddenDiv.style.opacity = '0';
+    hiddenDiv.style.transform = 'translateY(400px)';        
     // Optional: Remove the div from the DOM after the sliding animation
     setTimeout(() => {
       textDiv.style.display = 'none';
