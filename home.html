@@ -69,7 +69,7 @@ text-decoration:none;
       color: black;
     }
 #textDiv{
-opacity:0;
+display:none;
 background:transparent;
 top:20%;
 width:60%;
@@ -1470,8 +1470,8 @@ hiddenElementss.forEach((el) => observerr.observe(el));
       setTimeout(() => {
         const textDiv = document.getElementById('textDiv');
          const hiddenDiv = document.getElementById('hiddenDiv');    
-        textDiv.style.opacity = '1';
-        hiddenDiv.style.opacity = '1';
+        textDiv.style.display = 'block';
+        hiddenDiv.style.display = 'block';
        
         localStorage.setItem('divDisplayed', 'true');
       }, 8000);
@@ -1480,9 +1480,9 @@ hiddenElementss.forEach((el) => observerr.observe(el));
 
   function closeDiv() {
     const textDiv = document.getElementById('textDiv');
-    textDiv.style.opacity = '0';
+    textDiv.style.display = 'none';
     textDiv.style.transform = 'translateY(400px)';
-     hiddenDiv.style.opacity = '0';
+     hiddenDiv.style.opacity = 'none';
     hiddenDiv.style.transform = 'translateY(400px)';        
     // Optional: Remove the div from the DOM after the sliding animation
     setTimeout(() => {
